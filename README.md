@@ -1,3 +1,3 @@
-# web_calculator
+# Shared Expenses Calculator
 
-A new Flutter project.
+A new Flutter project by lukyblanco.

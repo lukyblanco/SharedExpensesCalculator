@@ -149,6 +149,19 @@ class ResultsPage extends StatelessWidget {
                         },
                       ),
                     ),
+                    const SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        FloatingActionButton.extended(
+                          icon: const Icon(Icons.arrow_back_rounded),
+                          label: const Text('Volver a Calcular'),
+                          onPressed: () {
+                            context.go('/datos');
+                          },
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),

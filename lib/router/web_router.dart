@@ -9,10 +9,12 @@ final webRouter = GoRouter(
   errorPageBuilder: (context, state) => const MaterialPage(child: NotFoundPage()),
   routes: [
     GoRoute(
+      // path: '/datos',
       path: '/datos',
       builder: (context, state) => const HomePage(),
     ),
     GoRoute(
+      // path: '/results',
       path: '/results',
       builder: (context, state) => const ResultsPage(),
     ),

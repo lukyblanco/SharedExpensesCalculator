@@ -27,8 +27,6 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         primarySwatch: Colors.indigo,
       ),
-      // home: ExpensesPage(),
-      // home: const HomePage(),
     );
   }
 }
