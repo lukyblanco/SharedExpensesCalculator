@@ -1,4 +1,4 @@
-package com.example.web_calculator
+package com.lukyblanco.webcalculator
 
 import io.flutter.embedding.android.FlutterActivity
 

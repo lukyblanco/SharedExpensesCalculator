@@ -9,7 +9,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:web_calculator/enities/persona.dart';
 import 'package:web_calculator/providers/calculo_provider.dart';
 
-
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -153,10 +152,9 @@ class _HomePageState extends State<HomePage> {
                           }
                         }
                       },
-                      child: Text(
-                        'Agregar',
-                        style: GoogleFonts.montserrat(fontWeight: FontWeight.w600)
-                      ),
+                      child: Text('Agregar',
+                          style: GoogleFonts.montserrat(
+                              fontWeight: FontWeight.w600)),
                     ),
                     const SizedBox(height: 20),
                     const Divider(),
@@ -170,39 +168,39 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     const SizedBox(height: 20),
-                    
+
                     // ? Tabla de personas
                     Expanded(
                         child: Visibility(
-                          visible: listaPersonas.isNotEmpty,
-                          child: SingleChildScrollView(
-                            scrollDirection: Axis.vertical,
-                            child: DataTable(
-                              headingTextStyle: const TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.bold),
-                              headingRowColor:
-                                  MaterialStateProperty.all(Colors.grey[50]),
-                              columns: [
-                                DataColumn(
-                                    label:
-                                        Text('Nombre', style: GoogleFonts.rubik())),
-                                DataColumn(
-                                    label: Text('Monto Gastado',
-                                        style: GoogleFonts.rubik()))
-                              ],
-                              rows: listaPersonas
-                                  .map((persona) => DataRow(
-                                        cells: [
-                                          DataCell(Text(persona.nombre)),
-                                          DataCell(Text(
-                                            '\$ ${persona.montoGastado.toString()}',
-                                            style: GoogleFonts.rubik(),
-                                          )),
-                                        ],
-                                      ))
-                                  .toList(),
-                            ),
-                          ),
+                      visible: listaPersonas.isNotEmpty,
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.vertical,
+                        child: DataTable(
+                          headingTextStyle: const TextStyle(
+                              fontSize: 14, fontWeight: FontWeight.bold),
+                          headingRowColor:
+                              MaterialStateProperty.all(Colors.grey[50]),
+                          columns: [
+                            DataColumn(
+                                label:
+                                    Text('Nombre', style: GoogleFonts.rubik())),
+                            DataColumn(
+                                label: Text('Monto Gastado',
+                                    style: GoogleFonts.rubik()))
+                          ],
+                          rows: listaPersonas
+                              .map((persona) => DataRow(
+                                    cells: [
+                                      DataCell(Text(persona.nombre)),
+                                      DataCell(Text(
+                                        '\$ ${persona.montoGastado.toString()}',
+                                        style: GoogleFonts.rubik(),
+                                      )),
+                                    ],
+                                  ))
+                              .toList(),
+                        ),
+                      ),
                     )),
                     const SizedBox(height: 20),
                     ElevatedButton(

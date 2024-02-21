@@ -155,7 +155,7 @@ class ResultsPage extends StatelessWidget {
                       children: [
                         FloatingActionButton.extended(
                           icon: const Icon(Icons.arrow_back_rounded),
-                          label: const Text('Volver a Calcular'),
+                          label: Text('Volver a Calcular', style: GoogleFonts.montserrat(fontWeight: FontWeight.w600),),
                           onPressed: () {
                             context.go('/datos');
                           },
