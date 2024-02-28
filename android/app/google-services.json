@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "657948007828",
+    "project_id": "shared-expenses-calculator",
+    "storage_bucket": "shared-expenses-calculator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657948007828:android:676a4bdacc01bc62514381",
+        "android_client_info": {
+          "package_name": "com.lukyblanco.webcalculator"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkhHZnQAJ1liTcEFDbPbxBTZXLHt_PWR8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

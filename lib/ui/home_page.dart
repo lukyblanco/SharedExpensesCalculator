@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
@@ -28,6 +29,14 @@ class _HomePageState extends State<HomePage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   final ScrollController _controller = ScrollController();
+
+  FirebaseAnalytics analytics = FirebaseAnalytics.instance;
+
+  @override
+  void initState() {
+    super.initState();
+    analytics.logEvent(name: 'page_view', parameters: {'page_name': 'Home'});
+  }
 
   @override
   void dispose() {
@@ -130,6 +139,8 @@ class _HomePageState extends State<HomePage> {
                     //? Botón para agregar datos
                     ElevatedButton(
                       onPressed: () {
+                        analytics.logEvent(
+                            name: 'click', parameters: {'clic_name': 'Agregar'});
                         if (_formKey.currentState!.validate()) {
                           // Agregar lógica para agregar datos
                           final persona = Persona(nombre, montoGastado);
@@ -210,6 +221,8 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: () {
+                        analytics.logEvent(
+                            name: 'click', parameters: {'clic_name': 'Calcular'});
                         if (listaPersonas.isNotEmpty &&
                             listaPersonas.length > 2) {
                           final calculoProvider = Provider.of<CalculoProvider>(

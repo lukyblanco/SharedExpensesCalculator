@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -5,9 +6,21 @@ import 'package:provider/provider.dart';
 import 'package:web_calculator/enities/persona.dart';
 import 'package:web_calculator/providers/calculo_provider.dart';
 
-class ResultsPage extends StatelessWidget {
+class ResultsPage extends StatefulWidget {
   const ResultsPage({super.key});
 
+  @override
+  State<ResultsPage> createState() => _ResultsPageState();
+}
+
+class _ResultsPageState extends State<ResultsPage> {
+  FirebaseAnalytics analytics = FirebaseAnalytics.instance;
+  
+  @override
+  void initState() {
+    super.initState();
+    analytics.logEvent(name: 'page_view', parameters: {'page_name': 'Result'});
+  }
   @override
   Widget build(BuildContext context) {
     final GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -162,6 +175,8 @@ class ResultsPage extends StatelessWidget {
                           icon: const Icon(Icons.arrow_back_rounded),
                           label: Text('Volver a Calcular', style: GoogleFonts.montserrat(fontWeight: FontWeight.w600),),
                           onPressed: () {
+                            analytics.logEvent(
+                            name: 'click', parameters: {'clic_name': 'Volver'});
                             context.go('/datos');
                           },
                         ),
