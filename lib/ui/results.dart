@@ -64,6 +64,7 @@ class ResultsPage extends StatelessWidget {
           style: GoogleFonts.montserratAlternates(
               fontSize: 30, color: Colors.black, fontWeight: FontWeight.bold),
         ),
+        centerTitle: true,
       ),
       body: Center(
         child: Padding(
@@ -136,17 +137,21 @@ class ResultsPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 5),
                     Expanded(
-                      child: ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: resultados.length,
-                        itemBuilder: (context, index) {
-                          return ListTile(
-                            title: Text(
-                              resultados[index],
-                              style: GoogleFonts.rubik(),
-                            ),
-                          );
-                        },
+                      child: Scrollbar(
+                        thumbVisibility: true,
+                        child: ListView.builder(
+                          physics: const ClampingScrollPhysics(),
+                          shrinkWrap: true,
+                          itemCount: resultados.length,
+                          itemBuilder: (context, index) {
+                            return ListTile(
+                              title: Text(
+                                resultados[index],
+                                style: GoogleFonts.rubik(),
+                              ),
+                            );
+                          },
+                        ),
                       ),
                     ),
                     const SizedBox(height: 20),

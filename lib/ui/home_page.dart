@@ -27,6 +27,8 @@ class _HomePageState extends State<HomePage> {
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  final ScrollController _controller = ScrollController();
+
   @override
   void dispose() {
     nombreController.dispose();
@@ -43,6 +45,7 @@ class _HomePageState extends State<HomePage> {
           style: GoogleFonts.montserratAlternates(
               fontSize: 30, color: Colors.black, fontWeight: FontWeight.bold),
         ),
+        centerTitle: true,
       ),
       body: Center(
         child: Padding(
@@ -174,6 +177,8 @@ class _HomePageState extends State<HomePage> {
                         child: Visibility(
                       visible: listaPersonas.isNotEmpty,
                       child: SingleChildScrollView(
+                        controller: _controller,
+                        physics: const AlwaysScrollableScrollPhysics(),
                         scrollDirection: Axis.vertical,
                         child: DataTable(
                           headingTextStyle: const TextStyle(
