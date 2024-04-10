@@ -242,6 +242,15 @@ class _HomePageState extends State<HomePage> {
                           style: GoogleFonts.montserrat(
                               fontWeight: FontWeight.w600)),
                     ),
+                    Container(
+                      margin: const EdgeInsets.only(top: 7),
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text('Powered By lukyblanco', style: TextStyle(fontSize: 10,fontStyle: FontStyle.italic))
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ),
